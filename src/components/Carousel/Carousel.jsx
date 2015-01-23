@@ -38,7 +38,7 @@ var Carousel = React.createClass({
     };
 
     return (
-      <div ref={'carousel'} style={}>
+      <div ref={'carousel'} style={ContainerStyle}>
         <ul style={CarouselStyle}>
           {React.Children.map(children, function(slide, i) {
             <li key={i} style={SlideStyle}>
