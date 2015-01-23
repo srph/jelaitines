@@ -3,24 +3,28 @@
 var React = require('react');
 var objectAssign = require('object-assign');
 
+// Button styling
 var ContainerStyle = {
   'height': '50px',
   'width': '50px',
   'borderRadius': '50%',
   'background': 'transparent',
-  'borderLeft': '1px'
-  'borderStyle': 'sol',
+  'borderLeft': '1px',
+  'borderStyle': 'solid',
   'cursor': 'pointer'
 };
 
+// Animation while the button is inactive
 var AnimatingStyle = {
   'borderLeftColor': '#fff',
   'animation': 'circular-motion 1.5s',
   'animationDelay': '1.5s'
-  'WebkitAimation': 'circular-motion 1.5s',
+  'WebkitAnimation': 'circular-motion 1.5s',
   'WebkitAnimationDelay': '1.5s'
 };
 
+// Animation when the button is finally active.
+// Fades out the animation.
 var ActiveStyle = {
   'transition': '1s',
   'borderColor': '#fff'
@@ -49,6 +53,8 @@ var ToBottom = React.createClass({
     this.setState({ active: true });
 
     var $doc = $(document);
-    $doc.transition({ scrollTop: $doc.height() },100, 'easeInOutBack');
+    $doc.transition({ scrollTop: $doc.height() }, 100, 'easeInOutBack');
   }
 });
+
+module.exports = ToBottom;
