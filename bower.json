@@ -1,0 +1,20 @@
+{
+  "name": "j",
+  "version": "0.0.0",
+  "homepage": "https://github.com/srph/jelaitines",
+  "authors": [
+    "srph <seraphipod@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "*",
+    "jquery.transit": "~0.9.12"
+  }
+}

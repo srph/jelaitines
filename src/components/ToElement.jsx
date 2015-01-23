@@ -2,7 +2,6 @@
 'use strict';
 var React = require('react');
 var objectAssign = require('object-assign');
-var $ = require('jQuery');
 
 var ContainerStyle = {
   'height': '50px',

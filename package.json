@@ -1,0 +1,24 @@
+{
+  "name": "j",
+  "version": "1.0.0",
+  "description": ":heart: My valentine's gift *teehee*",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/srph/jelaitines.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/srph/jelaitines/issues"
+  },
+  "homepage": "https://github.com/srph/jelaitines",
+  "dependencies": {
+    "browseify": "^0.1.1",
+    "object-assign": "^2.0.0",
+    "react": "^0.12.2"
+  }
+}
