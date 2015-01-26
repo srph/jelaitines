@@ -1,7 +1,7 @@
 /** @jsx React.DOM */
 'use strict';
 var React = require('react');
-var Carousel = require('react');
+var Carousel = require('./components/Carousel/Carousel.jsx');
 
 var App = React.createClass({
   componentDidMount: function() {
@@ -19,6 +19,6 @@ var App = React.createClass({
       </div>
     );
   }
-});e
+});
 
 React.render( <App />, document.body );

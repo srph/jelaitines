@@ -16,5 +16,8 @@
   "devDependencies": {
     "jquery": "*",
     "jquery.transit": "~0.9.12"
+  },
+  "dependencies": {
+    "normalize.css": "~3.0.2"
   }
 }

@@ -26,5 +26,9 @@
     "react-tools": "^0.12.2",
     "reactify": "^1.0.0",
     "watchify": "^2.2.1"
+  },
+  "browserify": {
+    "debug": true,
+    "extension": ".jsx"
   }
 }

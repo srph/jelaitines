@@ -16,8 +16,8 @@ var Carousel = React.createClass({
     var children = this.props.children;
 
     // Carousel data
-    var Carousel = this.refs.carousel.getDOMNode(); // Our element
-    var CarouselW = Carousel.width(); // Width
+    var CarouselNode = this.refs.carousel.getDOMNode(); // Our element
+    var CarouselW = CarouselNode.width(); // Width
     var CarouselOffset = (this.props.active * CarouselW) * -1;
 
 
@@ -40,11 +40,7 @@ var Carousel = React.createClass({
     return (
       <div ref={'carousel'} style={ContainerStyle}>
         <ul style={CarouselStyle}>
-          {React.Children.map(children, function(slide, i) {
-            <li key={i} style={SlideStyle}>
-              <slide isActive={active===i} />
-            </li>
-          }, this)}
+          <li></li>
         </ul>
       </div>
     );
@@ -57,7 +53,7 @@ var Carousel = React.createClass({
 
     this.setState({ active: dir == 'random'
       ? randIndex(length)
-      : adjustIndex(active + dir == "next" ? 1 : -1)
+      : adjustIndex( active + (dir == "next" ? 1 : -1) )
     });
   }
 });
