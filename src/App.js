@@ -1,7 +1,7 @@
 /** @jsx React.DOM */
 'use strict';
 var React = require('react');
-var Carousel = require('./components/Carousel/Carousel.jsx');
+var Carousel = require('./components/Carousel/Carousel');
 
 var App = React.createClass({
   componentDidMount: function() {

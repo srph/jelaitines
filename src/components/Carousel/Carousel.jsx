@@ -2,8 +2,25 @@
 'use strict';
 var React = require('react');
 
+var First = require('../First');
+var Ikalawa = require('../Ikalawa');
+var Sirkols = require('../Sirkols');
+var Loading = require('../Loading');
+var Last = require('../Last');
+
 // Carousel container styling
-var ContainerStyle = { 'overflow': 'hidden' };
+var ContainerStyle = {
+  'overflow': 'hidden',
+  'height': '100vh',
+  'width': '100%'
+};
+
+// Each slide
+var SlideStyle = {
+  'display': 'table-cell',
+  'verticalAlign': 'middle',
+  'listStyle': 'none'
+};
 
 var Carousel = React.createClass({
   getInitialState: function() {
@@ -12,35 +29,29 @@ var Carousel = React.createClass({
 
   render: function() {
     // Shorthand
-    var active = this.props.active;
+    var active = this.state.active;
     var children = this.props.children;
+    var slides = this.props.slide;
 
     // Carousel data
     var CarouselNode = this.refs.carousel.getDOMNode(); // Our element
     var CarouselW = CarouselNode.width(); // Width
     var CarouselOffset = (this.props.active * CarouselW) * -1;
 
-
+    // Carousel
     var CarouselStyle = {
       'display': 'table',
-      'width': '100%',
-      'height': '100%'
+      'height': '100%',
       'width': (slides.length * CarouselW),
       'transform': 'translate(\''+CarouselOffset+'\'px, 0)',
       'webkit-transform': 'translate(\''+CarouselOffset+'\'px, 0)',
     };
 
-    var SlideStyle = {
-      'display': 'table-cell',
-      'verticalAlign': 'middle',
-      'display': 'inline-block',
-      'listStyle': 'none'
-    };
-
     return (
       <div ref={'carousel'} style={ContainerStyle}>
         <ul style={CarouselStyle}>
-          <li></li>
+          <li class={SlideStyle}>
+          </li>
         </ul>
       </div>
     );

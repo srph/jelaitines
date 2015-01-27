@@ -4,8 +4,8 @@
   "description": ":heart: My valentine's gift *teehee*",
   "main": "index.js",
   "scripts": {
-    "build": "browserify ./src/App.js --transform [ reactify --es6 ] > dist/script.js -v -d",
-    "watch": "watchify ./src/App.js --transform [ reactify --es6 ] -o dist/script.js -v -d"
+    "build": "browserify ./src/App.js > dist/script.js -v -d",
+    "watch": "watchify ./src/App.js -o dist/script.js -v -d"
   },
   "repository": {
     "type": "git",
@@ -23,12 +23,11 @@
   },
   "devDependencies": {
     "browserify": "^8.1.1",
-    "react-tools": "^0.12.2",
     "reactify": "^1.0.0",
     "watchify": "^2.2.1"
   },
   "browserify": {
-    "debug": true,
-    "extension": ".jsx"
+    "extension": [ "jsx" ],
+    "transform": [ [ "reactify", { "es6": true } ] ]
   }
 }
