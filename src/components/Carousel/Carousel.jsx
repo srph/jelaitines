@@ -70,11 +70,11 @@ var Carousel = React.createClass({
       'transform': 'translate('+CarouselOffset+'px, 0)',
 
       // Slide transitions
-      'WebkitTransition': '1s all cubic-bezier(0.68, -0.55, 0.265, 1.55)',
-      'MozTransition': '1s all cubic-bezier(0.68, -0.55, 0.265, 1.55)',
-      'OTransition': '1s all cubic-bezier(0.68, -0.55, 0.265, 1.55)',
-      'msTransition': '1s all cubic-bezier(0.68, -0.55, 0.265, 1.55)',
-      'transition': '1s all cubic-bezier(0.68, -0.55, 0.265, 1.55)'
+      'WebkitTransition': '1s all cubic-bezier(0.68, -0.55, 0.265, 1.15)',
+      'MozTransition': '1s all cubic-bezier(0.68, -0.55, 0.265, 1.15)',
+      'OTransition': '1s all cubic-bezier(0.68, -0.55, 0.265, 1.15)',
+      'msTransition': '1s all cubic-bezier(0.68, -0.55, 0.265, 1.15)',
+      'transition': '1s all cubic-bezier(0.68, -0.55, 0.265, 1.15)'
     };
 
     // Each slide
