@@ -4,6 +4,9 @@ var objectAssign = require('object-assign');
 
 var px = require('../utils/px');
 
+// Loading bar colors
+// REDDISH, BLUISH, GREENISH
+var COLORS = ['#FF9999', 'rgb(86, 167, 245)', 'rgb(74, 226, 104)'];
 var WIDTH = 400;
 var HEIGHT = 100;
 
@@ -24,25 +27,33 @@ var Loading = React.createClass({
     // If this slide is already active
     active: React.PropTypes.bool.isRequired
   },
-  /**
-   * percentage - Loading %
-   */
+
   getInitialState: function() {
-    return { percentage: 0 };
+    return {
+      // Loading %
+      percentage: 0,
+      // Phases of loading
+      // Phase 1, 2, 3
+      phase: 0
+    };
   },
 
+  /**
+   * Start and clear the loading progress
+   */
   componentDidMount: function() { this._load(); },
   componentWillUnmount: function() { this._unload(); },
 
   render: function () {
-    var pxpp = WIDTH / 100; // pixel per percentage (w 150 / mxp 100)
     var percentage = this.state.percentage;
+    var phase = this.state.phase;
+    var pxpp = WIDTH / 100; // pixel per percentage (w 150 / mxp 100)
     var tpx = percentage * pxpp; // (1 * 1.5)
 
     var BarStyle = {
       'height': px(HEIGHT),
       'width': px(tpx),
-      'background': barColor(percentage),
+      'background': COLORS[phase - 1],
 
       'WebkitTransition': '1s all cubic-bezier(0.68, -0.55, 0.265, 1.55)',
       'MozTransition': '1s all cubic-bezier(0.68, -0.55, 0.265, 1.55)',
@@ -68,9 +79,11 @@ var Loading = React.createClass({
 
     var percentage = this.state.percentage;
     var duration = (percentage <= 50) ? 1500 : 2500;
+    var incremented = percentage + (percentage < 50 ? 25 : 50);
+    var phase = this.state.phase + 1;
 
     this.$loader = setTimeout(function() {
-      this.setState({ percentage: percentage + (percentage < 50 ? 25 : 50) }, function() {
+      this.setState({ percentage: incremented, phase: phase }, function() {
         if ( this.state.percentage < 100 ) {
           this._load();
         }
@@ -87,7 +100,5 @@ var Loading = React.createClass({
     }
   }
 });
-
-function barColor(p) { return p>50?'rgb(74, 226, 104)':p<=25?'#FF9999':'rgb(86, 167, 245)'}
 
 module.exports = Loading;
