@@ -38,6 +38,13 @@
       35% { transform: rotate(100deg); }
       100% { transform: rotate(360deg); }
     }
+
+    /**
+     * http://nicolasgallagher.com/micro-clearfix-hack/
+     */
+    .cf:before, .cf:after { content: " "; display: table; /* 2 */ }
+    .cf:after { clear: both; }
+    .cf { *zoom: 1; }
   </style>
 </head>
 <body>

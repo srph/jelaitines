@@ -1,11 +1,11 @@
-{
+  {
   "name": "j",
   "version": "1.0.0",
   "description": ":heart: My valentine's gift *teehee*",
   "main": "index.js",
   "scripts": {
     "build": "browserify ./src/App.js > dist/script.js -v -d",
-    "watch": "watchify ./src/App.js -o dist/script.js -v -d"
+    "watch": "watchify ./src/App.js --extension=.jsx -o dist/script.js -v -d"
   },
   "repository": {
     "type": "git",
@@ -27,7 +27,7 @@
     "watchify": "^2.2.1"
   },
   "browserify": {
-    "extension": [ "jsx" ],
+    "extension": [ ".jsx" ],
     "transform": [ [ "reactify", { "es6": true } ] ]
   }
 }

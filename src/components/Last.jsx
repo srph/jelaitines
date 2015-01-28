@@ -16,7 +16,7 @@ var Last = React.createClass({
     var style = this.props.active ? DefaultStyle : ActiveStyle;
 
     return (
-      <div style={style} class="clearfix">
+      <div style={style} className="clearfix">
         <div style={{ 'float': 'left', 'textAlign': 'left' }}>
           <h1> Happy </h1>
           <h4> Valentines </h4>

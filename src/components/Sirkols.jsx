@@ -12,7 +12,7 @@ var Sirkols = React.createClass({
     var IMGStyle = {
       '1': Oassign('borderRadius', L1),
       '2': Oassign('borderRadius', L2),
-      '3': Oassign('borderRadius', L4)
+      '3': Oassign('borderRadius', L3)
     };
 
     return (

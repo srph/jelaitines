@@ -13,7 +13,7 @@ var App = React.createClass({
     return (
       <div>
         <Carousel />
-        <audio loop autoplay ref="audio">
+        <audio loop autoPlay ref="audio">
           <source src="endlessly.mp3" type="audio/mp3" />
         </audio>
       </div>
