@@ -9,6 +9,7 @@ var px = require('../utils/px');
 var COLORS = ['#FF9999', 'rgb(86, 167, 245)', 'rgb(74, 226, 104)'];
 var WIDTH = 400;
 var HEIGHT = 100;
+var PXPP = WIDTH / 100; // pixel per percentage (w 150 / mxp 100)
 
 var ContainerStyle = {
   // Center
@@ -47,8 +48,7 @@ var Loading = React.createClass({
   render: function () {
     var percentage = this.state.percentage;
     var phase = this.state.phase;
-    var pxpp = WIDTH / 100; // pixel per percentage (w 150 / mxp 100)
-    var tpx = percentage * pxpp; // (1 * 1.5)
+    var tpx = percentage * PXPP; // (1 * 1.5) = 1.5px || (10*1.5) = 10.5px;
 
     var BarStyle = {
       'height': px(HEIGHT),
