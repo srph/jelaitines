@@ -2,6 +2,10 @@
 'use strict';
 var React = require('react');
 
+var px = require('../../utils/px');
+var randIndex = require('../../utils/rand-index');
+var adjustIndex = require('../../utils/adjust-index');
+
 var First = require('../First');
 var Ikalawa = require('../Ikalawa');
 var Sirkols = require('../Sirkols');
@@ -91,7 +95,7 @@ var Carousel = React.createClass({
         <ul style={CarouselStyle}>
           {SLIDES.map(function(Slide, i) {
             return (
-              <li key={i+'slide----'} style={SlideStyle}>
+              <li key={i} style={SlideStyle}>
                 <Slide active={active == i} />
               </li>
             );
@@ -101,6 +105,10 @@ var Carousel = React.createClass({
     );
   },
 
+  /**
+   * Move to another slide (either next, random, or previous)
+   * @param {string} dir Slide direction
+   */
   _move: function(dir) {
     var active = this.state.active;
     var length = SLIDES_COUNT;
@@ -111,26 +119,5 @@ var Carousel = React.createClass({
     });
   },
 });
-
-/**
- * Adjusts the given index to not
- * exceed 0 and the last index.
- *
- * @param i Incremented / decremented index
- * @param m Number of elements
- * @returns int
- */
-function adjustIndex(i, m) { return i <= m - 1 && i >= 0 ? i : (i < 0 ? m : 0); }
-
-/**
- * A randomly generated value (from 0 to [l - 1])
- * @param l Index of last item
- */
-function randIndex(l) { return Math.floor( Math.random() * (l - 1) + 0 ); }
-
-/**
- * Adds a px suffix to the integer
- */
-function px(i) { return i + 'px' };
 
 module.exports = Carousel;

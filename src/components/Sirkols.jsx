@@ -1,22 +1,37 @@
 /** @jsx React.DOM */
 var React = require('react');
-var Oassign = require('object-assign');
+var objectAssign = require('object-assign');
 
-var Circular = { 'borderRadius': '50%' };
-var L1 = propSize('98px');
-var L2 = propSize('72px');
+// Thumbnail styling
+var ThumbnailStyle = {
+  'position': 'absolute',
+  'background': '#ddd',
+  'borderRadius': '50%'
+};
+
+// Various size for each thumbnail
+var L1 = propSize('256px');
+var L2 = propSize('128px');
 var L3 = propSize('64px');
 
 var Sirkols = React.createClass({
   render: function () {
     var IMGStyle = {
-      '1': Oassign('borderRadius', L1),
-      '2': Oassign('borderRadius', L2),
-      '3': Oassign('borderRadius', L3)
+      '1': objectAssign({}, ThumbnailStyle, L1),
+      '2': objectAssign({ 'top': '50px', 'right': '5px' }, ThumbnailStyle, L2),
+      '3': objectAssign({ 'top': 0, 'right': '100px' }, ThumbnailStyle, L3)
+    };
+
+    var ContainerStyle =  {
+      'position': 'relative',
+      'marginLeft': 'auto',
+      'marginRight': 'auto',
+      'height': 256,
+      'width': 396
     };
 
     return (
-      <div>
+      <div style={ContainerStyle}>
         <img src="" style={IMGStyle['1']} />
         <img src="" style={IMGStyle['2']} />
         <img src="" style={IMGStyle['3']} />
