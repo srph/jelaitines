@@ -4,11 +4,10 @@ var React = require('react');
 var First = React.createClass({
   render: function () {
     return (
-      <div>
-        <h2> You Are The </h2>
-        <h1> Best Person </h1>
-        <h2> To Be In </h2>
-        <h1> My Life </h1>
+      <div className="u-uppercase u-text-center">
+        <h4> <span className="special-type">Your</span> </h4>
+        <h1 className="highlight-type u-nocase"> Hello! </h1>
+        <h5> <span className="l-type">Captured My Eyes</span> </h5>
       </div>
     );
   }

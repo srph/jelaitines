@@ -96,7 +96,7 @@ var Carousel = React.createClass({
           {SLIDES.map(function(Slide, i) {
             return (
               <li key={i} style={SlideStyle}>
-                <Slide active={active == i} />
+                { active >= i ? <Slide /> : <div />}
               </li>
             );
           })}

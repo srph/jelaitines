@@ -4,10 +4,10 @@ var React = require('react');
 var Ikalawa = React.createClass({
   render: function () {
     return (
-      <div>
-        <h3> All The </h3>
-        <h1> Sweet </h1>
-        <h2> Memories </h2>
+      <div className="u-uppercase u-text-center">
+        <h4> <span className="special-type">Your</span> </h4>
+        <h1 className="highlight-type u-nocase"> Smile </h1>
+        <h5> <span className="l-type">Stole My Heart</span> </h5>
       </div>
     );
   }

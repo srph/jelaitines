@@ -3,26 +3,19 @@
 var React = require('react');
 
 var Last = React.createClass({
-  /**
-   * props.active - Flag whether this frame
-   * is currently active (carousel).
-   */
-  propTypes: { active: React.PropTypes.bool.isRequired },
-
   render: function (argument) {
     var ContainerStyle = {
       'position': 'relative',
       'marginLeft': 'auto',
       'marginRight': 'auto',
-      'width': 500,
-      'opacity': this.props.active ? 1 : 0
+      'width': 350
     };
 
     return (
       <div style={ContainerStyle} className="clearfix">
         <div style={{ 'float': 'left', 'textAlign': 'left' }}>
-          <h1> Happy </h1>
-          <h4> Valentines </h4>
+          <h1 className="highlight-type u-text-center"> Happy </h1>
+          <h3 className="highlight-type"> Valentines </h3>
         </div>
 
         <div style={{ 'float': 'right', 'marginLeft': '5px', 'textAlign': 'center' }}>
