@@ -16,6 +16,7 @@ var ContainerStyle = {
   'marginLeft': 'auto',
   'marginRight': 'auto',
 
+  'position': 'relative',
   'overflow': 'hidden',
   'height': px(HEIGHT),
   'width': px(WIDTH),
@@ -62,10 +63,31 @@ var Loading = React.createClass({
       'transition': '1s all cubic-bezier(0.68, -0.55, 0.265, 1.55)'
     };
 
+    var HeartStyle ={
+      'margin': 'auto',
+      'position': 'absolute',
+      'top': '0',
+      'bottom': '0',
+      'left': '0',
+      'right': '0',
+      'width': 50,
+      'height': HEIGHT / 4,
+      'textAlign': 'center',
+      'color': '#FF9999',
+      'opacity': phase >= 3 ? 1 : 0,
+
+      'WebkitTransition': '1.5s all ease',
+      'MozTransition': '1.5s all ease',
+      'OTransition': '1.5s all ease',
+      'msTransition': '1.5s all ease',
+      'transition': '1.5s all ease'
+    };
+
     return (
       <div>
         <div style={ContainerStyle}>
           <div style={BarStyle}></div>
+          <div style={HeartStyle}> <i className="ion-ios-heart" /> </div>
         </div>
       </div>
     );
