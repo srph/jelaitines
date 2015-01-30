@@ -21,15 +21,11 @@ var ContainerStyle = {
   'height': px(HEIGHT),
   'width': px(WIDTH),
   'borderRadius': '20px',
+  'boxShadow': '3px 3px 0px #64CFE2',
   'background': '#ddd',
 };
 
 var Loading = React.createClass({
-  propTypes: {
-    // If this slide is already active
-    active: React.PropTypes.bool.isRequired
-  },
-
   getInitialState: function() {
     return {
       // Loading %

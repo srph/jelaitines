@@ -1,6 +1,7 @@
 /** @jsx React.DOM */
 'use strict';
 var React = require('react');
+var objectAssign = require('object-assign');
 
 var px = require('../../utils/px');
 var randIndex = require('../../utils/rand-index');
@@ -18,6 +19,18 @@ var SLIDES_COUNT = 5;
 // Put each slide in an array
 // to be mappable (Array.map)
 var SLIDES = [First, Ikalawa, Sirkols, Loading, Last];
+// BGs
+var SLIDES_BG = [
+  '(90deg, #4CB8C4 10%, #3CD3AD 90%)',
+  '(90deg, #DD5E89 10%, #F7BB97 90%)',
+  '(90deg, #8e9eab 10%, #eef2f3 90%)',
+  '(90deg, #83a4d4 10%, #b6fbff 90%)',
+  '(90deg, rgb(199, 79, 188) 70%, rgb(239, 92, 109) 90%)'
+];
+
+// keyCode enum
+var LEFT_KEY = 37;
+var RIGHT_KEY = 39;
 
 // Carousel container styling
 var ContainerStyle = {
@@ -37,7 +50,13 @@ var Carousel = React.createClass({
    * Force update since `ref` does not exist
    * on initial load
    */
-  componentDidMount: function() { this.forceUpdate(); },
+  componentDidMount: function() {
+    // Bind arrow move
+    document.addEventListener('keydown', this._handleKeyDown);
+
+    // Update so refs will exist
+    this.forceUpdate();
+  },
 
   render: function() {
     // Shorthand
@@ -61,6 +80,13 @@ var Carousel = React.createClass({
       'listStyle': 'none',
       'padding': '0',
       'margin': '0',
+
+      // Bg
+      // 'background': '-webkit-linear-gradient' + SLIDES_BG[active],
+      // 'background': '-moz-linear-gradient' + SLIDES_BG[active],
+      // 'background': '-o-linear-gradient' + SLIDES_BG[active],
+      // 'background': '-ms-linear-gradient' + SLIDES_BG[active],
+      'background': 'linear-gradient' + SLIDES_BG[active],
 
       // Move slide
       'WebkitTransform': 'translate('+CarouselOffset+'px, 0)',
@@ -91,7 +117,6 @@ var Carousel = React.createClass({
 
     return (
       <div ref={'container'} style={ContainerStyle}>
-        <div onClick={move('next')}>MOVE</div>
         <ul style={CarouselStyle}>
           {SLIDES.map(function(Slide, i) {
             return (
@@ -99,7 +124,7 @@ var Carousel = React.createClass({
                 { active >= i ? <Slide /> : <div />}
               </li>
             );
-          })}
+          }.bind(this))} 
         </ul>
       </div>
     );
@@ -118,6 +143,16 @@ var Carousel = React.createClass({
       : adjustIndex( active + (dir == "next" ? 1 : -1), length )
     });
   },
+
+  /**
+   * Move slides when an arrow key is pressed
+   */
+  _handleKeyDown: function(evt) {
+    var key = evt.keyCode;
+
+    if ( key == LEFT_KEY ) this._move('previous');
+    else if ( key == RIGHT_KEY ) this._move('next');
+  }
 });
 
 module.exports = Carousel;
