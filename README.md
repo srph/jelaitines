@@ -17,4 +17,4 @@ This project was built with **ReactJS**, **Ionicons**, and **normalize.css**.
 
 ### Notice
 
-I included and used the audio track **Endlessly** by *The Cab*. No copyright infringement intended. This project was intended for personal purposes, no money involved. If I am found to be violating any copyrighted material, please notice me as soon as possible, thanks.
+I included and used the audio track **Endlessly** by *The Cab*. No copyright infringement intended. This project was intended for personal purposes, no money involved. If I am found to be violating any restrictions of usage on the copyrighted material, please notice me as soon as possible, thanks.
