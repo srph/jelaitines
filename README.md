@@ -7,7 +7,7 @@ Some mocks ([1](http://fav.me/d8fvbev), [2](http://fav.me/d8fva4o)) @ deviantART
 
 ## Acknowledgement
 
-This project was built with **ReactJS**, **Ionicons**, and **normalize.css**.
+This project was built with **ReactJS**, **Ionicons**, and **normalize.css**. Shortcut icon (*favicon*) from [favicon.cc](favicon: http://www.favicon.cc/?action=icon&file_id=796331).
 
 **jelaitines** © 2014+, Kier Borromeo (srph).
 
