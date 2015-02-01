@@ -1,7 +1,7 @@
 /** @jsx React.DOM */
 var React = require('react');
 
-var Thumbnail = require('./Thumbnail');
+var Thumbnail = require('../Thumbnail');
 
 var Gallery = React.createClass({
   render: function () {
