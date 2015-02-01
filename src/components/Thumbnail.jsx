@@ -53,8 +53,8 @@ function getHeight(size) {
         return 2;
       case '4':
         return 4;
-      }
-  }
+    }
+  })();
 }
 
 /**
@@ -70,8 +70,8 @@ function getWidth(size) {
         return 2;
       case '4':
         return 4;
-      }
-  }
+    }
+  })();
 }
 
 module.exports = Thumbnail;
