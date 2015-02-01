@@ -28,6 +28,7 @@ var BGM = React.createClass({
   _incrementVolume: function() {
     var phase = this.state.phase;
     var audio = this.refs.audio.getDOMNode();
+    var interval = intrvl(phase);
 
     this.$interval = setInterval(function() {
       switch(phase) {
@@ -57,8 +58,16 @@ var BGM = React.createClass({
             cancelInterval(this.$interval);
           }
       }
-    }, 8000);
+    }, interval);
   }
 });
+
+/**
+ * Provides proper variation of interval for each phase
+ * of volume adjustment
+ *
+ * @params {int} p Nth phase
+ */
+function intrvl(p) { if(!p)return 4000;if(p==1)return 5500;return 6000; }
 
 module.exports = BGM;
