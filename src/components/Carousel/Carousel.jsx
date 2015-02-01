@@ -19,7 +19,7 @@ var Greeting = require('./Greeting');
 var SLIDES_COUNT = 5;
 // Put each slide in an array
 // to be mappable (Array.map)
-var SLIDES = [First, Second, Sirkols, Loader, Greeting];
+var SLIDES = [First, Sirkols, Second, Gallery, Loader, Greeting];
 // BGs
 var SLIDES_BG = [
   '(90deg, #4CB8C4 10%, #3CD3AD 90%)',
