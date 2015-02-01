@@ -18,7 +18,7 @@ var BGM = React.createClass({
   render: function () {
     return (
       <div>
-        <audio loop autoPlay ref="audio">
+        <audio autoPlay ref="audio">
           <source src="endlessly.mp3" type="audio/mp3" />
         </audio>
       </div>
