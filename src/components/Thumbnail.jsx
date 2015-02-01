@@ -1,8 +1,8 @@
 /** @jsx React.DOM */
 var React = require('react');
 
-var SIZES = ['1', '2h', '2v', '4'];
-var BASE_SIZE = 200;
+var SIZES = ['1', '2h', '2v', '3', '4'];
+var BASE_SIZE = 300;
 
 var Thumbnail = React.createClass({
   propTypes: {
@@ -25,16 +25,16 @@ var Thumbnail = React.createClass({
     var src = this.props.src;
     var size = this.props.size;
 
-    var ContainerStyle = {
-      'float': 'left',
+    var ThumbnailStyle = {
       'width': getWidth(size),
-      'height': getHeight(size)
+      'height': getHeight(size),
+      'float': 'left',
+      'background': 'url(' + src + ')',
+      'backgroundSize': 'cover'
     };
 
     return (
-      <div style={ContainerStyle}>
-        <div /> // Hover icon
-        <img src={src} alt="{Thumbnail}" />
+      <div style={ThumbnailStyle}>
       </div>
     );
   }
@@ -47,9 +47,10 @@ function getHeight(size) {
   return BASE_SIZE / (function() {
     switch(size) {
       case '1':
-      case '2v':
-        return 1;
       case '2h':
+        return 1;
+      case '2v':
+      case '3':
         return 2;
       case '4':
         return 4;
@@ -64,9 +65,10 @@ function getWidth(size) {
   return BASE_SIZE / (function() {
     switch(size) {
       case '1':
-      case '2h':
-        return 1;
       case '2v':
+        return 1;
+      case '2h':
+      case '3':
         return 2;
       case '4':
         return 4;

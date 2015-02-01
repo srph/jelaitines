@@ -16,7 +16,7 @@ var Greeting = require('./Greeting');
 
 // The number of slides,
 // check the stuff above.
-var SLIDES_COUNT = 5;
+var SLIDES_COUNT = 6;
 // Put each slide in an array
 // to be mappable (Array.map)
 var SLIDES = [First, Sirkols, Second, Gallery, Loader, Greeting];
