@@ -57,13 +57,14 @@ var BGM = React.createClass({
 
         case 2:
           audio.volume += 0.1;
-          break;
 
           this._adjustVolume();
 
           if ( audio.volume >= 0.6 ) {
             clearTimeout(this.$interval);
           }
+
+          break;          
       }
     }.bind(this), interval);
   }
