@@ -2,7 +2,7 @@
 var React = require('react');
 var objectAssign = require('object-assign');
 
-var px = require('../utils/px');
+var px = require('../../utils/px');
 
 // Loading bar colors
 // REDDISH, BLUISH, GREENISH

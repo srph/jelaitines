@@ -7,18 +7,19 @@ var px = require('../../utils/px');
 var randIndex = require('../../utils/rand-index');
 var adjustIndex = require('../../utils/adjust-index');
 
-var First = require('../First');
-var Ikalawa = require('../Ikalawa');
-var Sirkols = require('../Sirkols');
-var Loading = require('../Loading');
-var Last = require('../Last');
+var First = require('./First');
+var Sirkols = require('./Sirkols');
+var Second = require('./Second');
+var Gallery = require('./Gallery');
+var Loader = require('./Loader');
+var Greeting = require('./Greeting');
 
 // The number of slides,
 // check the stuff above.
 var SLIDES_COUNT = 5;
 // Put each slide in an array
 // to be mappable (Array.map)
-var SLIDES = [First, Ikalawa, Sirkols, Loading, Last];
+var SLIDES = [First, Second, Sirkols, Loader, Greeting];
 // BGs
 var SLIDES_BG = [
   '(90deg, #4CB8C4 10%, #3CD3AD 90%)',
