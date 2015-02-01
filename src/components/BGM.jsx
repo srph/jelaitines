@@ -34,7 +34,7 @@ var BGM = React.createClass({
         case 0:
           audio.volume += 0.1;
 
-          if ( audio.volume == 6 ) {
+          if ( audio.volume == 0.6 ) {
             this.setState({ phase: 1 });
           }
 
@@ -43,7 +43,7 @@ var BGM = React.createClass({
         case 1:
           audio.volume -= 0.1;
 
-          if ( audio.volume == 4 ) {
+          if ( audio.volume == 0.4 ) {
             this.setState({ phase: 2 });
           }
 
@@ -53,7 +53,9 @@ var BGM = React.createClass({
           audio.volume += 0.1;
           break;
 
-          cancelInterval(this.$interval);
+          if ( audio.volume == 0.6 ) {
+            cancelInterval(this.$interval);
+          }
       }
     }, 8000);
   }
