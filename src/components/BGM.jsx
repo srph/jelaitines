@@ -11,7 +11,7 @@ var BGM = React.createClass({
   componentDidMount: function() {
     this.forceUpdate(function() {
       this.refs.audio.getDOMNode().volume = 0.1;
-      this._incrementVolume();
+      this._adjustVolume();
     }.bind(this));
   },
 
@@ -25,40 +25,47 @@ var BGM = React.createClass({
     );
   },
 
-  _incrementVolume: function() {
+  /**
+   * Adjust and variate volume over time
+   */
+  _adjustVolume: function() {
     var phase = this.state.phase;
     var audio = this.refs.audio.getDOMNode();
     var interval = intrvl(phase);
 
-    this.$interval = setInterval(function() {
+    this.$interval = setTimeout(function() {
       switch(phase) {
         case 0:
           audio.volume += 0.1;
 
-          if ( audio.volume == 0.6 ) {
+          if ( audio.volume >= 0.6 ) {
             this.setState({ phase: 1 });
           }
 
+          this._adjustVolume();
           break;
 
         case 1:
           audio.volume -= 0.1;
 
-          if ( audio.volume == 0.4 ) {
+          if ( audio.volume <= 0.4 ) {
             this.setState({ phase: 2 });
           }
 
+          this._adjustVolume();
           break;
 
         case 2:
           audio.volume += 0.1;
           break;
 
-          if ( audio.volume == 0.6 ) {
-            cancelInterval(this.$interval);
+          this._adjustVolume();
+
+          if ( audio.volume >= 0.6 ) {
+            clearTimeout(this.$interval);
           }
       }
-    }, interval);
+    }.bind(this), interval);
   }
 });
 
@@ -68,6 +75,6 @@ var BGM = React.createClass({
  *
  * @params {int} p Nth phase
  */
-function intrvl(p) { if(!p)return 4000;if(p==1)return 5500;return 6000; }
+function intrvl(p) { if(!p)return 8000;if(p==1)return 3000;return 10000; }
 
 module.exports = BGM;
