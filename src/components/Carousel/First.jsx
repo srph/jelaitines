@@ -1,11 +1,11 @@
 /** @jsx React.DOM */
 var React = require('react');
 
-var HideStyle = require('./_hide');
-var animate = require('./_animate');
-var one = require('../../utils/one');
+var one = require('../../utils/$el').one;
+var animate = require('./utils/animate');
+var HiddenStyle = require('./utils/hidden.css');
 
-var TRANSITION_END_EVT = require('../../utils/transition-end');
+var ANIMATIONEND_EVT = require('./utils/animationEnd.evt');
 var ANI = { _1: 'bounceInDown', _2: 'zoomInUp', _3: 'bounceIn' };
 
 var First = React.createClass({
@@ -16,18 +16,18 @@ var First = React.createClass({
     this.forceUpdate(function() {
       var refs = this.refs;
 
-      this._1();
-      one(refs._1.getDOMNode(), TRANSITION_END_EVT, this._2);
-      one(refs._2.getDOMNode(), TRANSITION_END_EVT, this._3);
+      setTimeout(this._1, 1500);
+      one(refs._1.getDOMNode(), ANIMATIONEND_EVT, this._2);
+      one(refs._2.getDOMNode(), ANIMATIONEND_EVT, this._3);
     });
   },
 
   render: function () {
     return (
       <div className="u-uppercase u-text-center">
-        <div ref={'_1'} style={HideStyle}> <h4><span className="special-type">Your</span></h4> </div>
-        <div ref={'_2'} style={HideStyle}> <h1 className="highlight-type u-nocase">Hello!</h1> </div>
-        <div ref={'_3'} style={HideStyle}> <h5><span className="l-type">Captured My Eyes</span></h5> </div>
+        <div ref={'_1'} style={HiddenStyle}> <h4><span className="special-type">Your</span></h4> </div>
+        <div ref={'_2'} style={HiddenStyle}> <h1 className="highlight-type u-nocase">Hello!</h1> </div>
+        <div ref={'_3'} style={HiddenStyle}> <h5><span className="l-type">Captured My Eyes</span></h5> </div>
       </div>
     );
   },

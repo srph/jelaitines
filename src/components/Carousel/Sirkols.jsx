@@ -2,11 +2,11 @@
 var React = require('react');
 var objectAssign = require('object-assign');
 
-var HideStyle = require('./_hide');
-var animate = require('./_animate');
-var one = require('../../utils/one');
+var one = require('../../utils/$el').one;
+var animate = require('./utils/animate');
+var HiddenStyle = require('./utils/hidden.css');
 
-var TRANSITION_END_EVT = require('../../utils/transition-end');
+var ANIMATIONEND_EVT = require('./utils/animationEnd.evt');
 var ANI = { _1: 'bounceIn', _2: 'bounceIn', _3: 'bounceIn' };
 
 // Thumbnail styling
@@ -30,8 +30,8 @@ var Sirkols = React.createClass({
       var refs = this.refs;
 
       setTimeout(this._1, 1500);
-      one(refs._1.getDOMNode(), TRANSITION_END_EVT, this._2);
-      one(refs._2.getDOMNode(), TRANSITION_END_EVT, this._3);
+      one(refs._1.getDOMNode(), ANIMATIONEND_EVT, this._2);
+      one(refs._2.getDOMNode(), ANIMATIONEND_EVT, this._3);
     });
   },
 
@@ -52,9 +52,9 @@ var Sirkols = React.createClass({
 
     return (
       <div style={ContainerStyle}>
-        <div ref={'_1'} style={HideStyle}> <img src="dist/img/t.jpg" style={IMGStyle['1']} /> </div>
-        <div ref={'_2'} style={HideStyle}> <img src="dist/img/j.jpg" style={IMGStyle['2']} /> </div>
-        <div ref={'_3'} style={HideStyle}> <img src="dist/img/k.jpg" style={IMGStyle['3']} /> </div>
+        <div ref={'_1'} style={HiddenStyle}> <img src="dist/img/t.jpg" style={IMGStyle['1']} /> </div>
+        <div ref={'_2'} style={HiddenStyle}> <img src="dist/img/j.jpg" style={IMGStyle['2']} /> </div>
+        <div ref={'_3'} style={HiddenStyle}> <img src="dist/img/k.jpg" style={IMGStyle['3']} /> </div>
       </div>
     );
   },
