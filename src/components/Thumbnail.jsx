@@ -18,7 +18,7 @@ var Thumbnail = React.createClass({
       }
     },
 
-    src: React.PropType.string.isRequired
+    src: React.PropTypes.string.isRequired
   },
 
   render: function () {
