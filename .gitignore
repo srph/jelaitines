@@ -29,4 +29,5 @@ bower_components
 .lock-wscript
 
 # Compiled / Built files
-dist
+dist/script.js
+dist/script.min.js

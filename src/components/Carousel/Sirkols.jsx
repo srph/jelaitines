@@ -32,9 +32,9 @@ var Sirkols = React.createClass({
 
     return (
       <div style={ContainerStyle}>
-        <img src="img/t.jpg" style={IMGStyle['1']} />
-        <img src="img/j.jpg" style={IMGStyle['2']} />
-        <img src="img/k.jpg" style={IMGStyle['3']} />
+        <img src="dist/img/t.jpg" style={IMGStyle['1']} />
+        <img src="dist/img/j.jpg" style={IMGStyle['2']} />
+        <img src="dist/img/k.jpg" style={IMGStyle['3']} />
       </div>
     );
   }
