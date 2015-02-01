@@ -10,7 +10,6 @@ var App = React.createClass({
     return (
       <div>
         <Carousel />
-        // <BGM />
       </div>
     );
   }
