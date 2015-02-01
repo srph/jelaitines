@@ -1,0 +1,1 @@
+module.exports = { 'opacity' : 0 };
