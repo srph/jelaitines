@@ -33,38 +33,41 @@ var BGM = React.createClass({
     var audio = this.refs.audio.getDOMNode();
     var interval = intrvl(phase);
 
-    this.$interval = setTimeout(function() {
+    this.$timeout = setTimeout(function() {
       switch(phase) {
         case 0:
           audio.volume += 0.1;
 
-          if ( audio.volume >= 0.6 ) {
+          if ( audio.volume >= 0.8 ) {
             this.setState({ phase: 1 });
           }
 
+          console.log( new Date().getSeconds() );
           this._adjustVolume();
           break;
 
         case 1:
           audio.volume -= 0.1;
 
-          if ( audio.volume <= 0.4 ) {
+          if ( audio.volume <= 0.3 ) {
             this.setState({ phase: 2 });
           }
 
+          console.log( new Date().getSeconds() );
           this._adjustVolume();
           break;
 
         case 2:
           audio.volume += 0.1;
 
-          this._adjustVolume();
+          console.log( new Date().getSeconds() );
 
           if ( audio.volume >= 0.6 ) {
-            clearTimeout(this.$interval);
+            clearTimeout(this.$timeout);
+            break;
           }
 
-          break;          
+          this._adjustVolume();
       }
     }.bind(this), interval);
   }
@@ -76,6 +79,6 @@ var BGM = React.createClass({
  *
  * @params {int} p Nth phase
  */
-function intrvl(p) { if(!p)return 8000;if(p==1)return 3000;return 10000; }
+function intrvl(p) { if(!p)return 15000;if(p==1)return 10000;return 20000; }
 
 module.exports = BGM;
