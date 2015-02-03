@@ -5,7 +5,7 @@ var AnimationMixin = require('./mixins/AnimationMixin');
 var HiddenStyle = require('./utils/hidden.css');
 
 var Second = React.createClass({
-  mixin: [AnimationMixin],
+  mixins: [AnimationMixin],
 
   render: function () {
     return (
