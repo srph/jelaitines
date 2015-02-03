@@ -1,5 +1,4 @@
-var one = require('../../../utils/$el').one;
-var animate = require('../utils/animate');
+var ANIMATIONEND = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
 
 /**
  * An animation mixin for this `special` carousel. Since we mark elements with
@@ -13,7 +12,6 @@ var AnimationMixin = {
   componentDidMount: function() {
     var pauseLength = this.$pauseLength;
     var elementsLength = this.$elementsLength;
-    var ANIMATIONEND = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
 
     this.forceUpdate(function() {
       for ( var i = 1; i <= elementsLength ; i++ ) {
@@ -55,5 +53,36 @@ var AnimationMixin = {
    */
   // $animations: function()
 };
+
+/**
+ * Adds the opacity back, and then adds the animation class
+ *
+ * @see animation.css
+ * @param {Element} el
+ * @param {sring} className
+ */
+function animate(el, className) {
+  el.style.opacity = '1.0';
+  el.setAttribute('class', className + ' animated');
+}
+
+/**
+ * Binds or adds (an) event listener(s) to an element for once.
+ * Removes the event listener after firing once.
+ *
+ * @params {Element} el
+ * @params {string} evts
+ * @params {function} callback
+ */
+function one(el, evts, callback) {
+  evts.split(' ').forEach(function(evt) {
+    var fn = function(e) {
+      callback(e);
+      el.removeEventListener(evt, fn)
+    }
+
+    el.addEventListener(evt, fn);
+  });
+}
 
 module.exports = AnimationMixin;
