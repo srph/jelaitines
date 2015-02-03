@@ -11,11 +11,11 @@ var AnimationMixin = {
 
     for ( var i = 1; i <= ; i++ ) {
       if ( i == 1 ) {
-        setTimeout( this.animate(1), this.$pauseLength );
+        setTimeout( this._animate(1), this.$pauseLength );
       }
 
       else { 
-        one( refs['_' + (i - 1)].getDOMNode(), ANIMATIONEND, this.animate(i) );
+        one( refs['_' + (i - 1)].getDOMNode(), ANIMATIONEND, this._animate(i) );
       }
     }
   },
