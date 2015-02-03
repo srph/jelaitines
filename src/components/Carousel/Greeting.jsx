@@ -12,19 +12,17 @@ var Last = React.createClass({
       'position': 'relative',
       'marginLeft': 'auto',
       'marginRight': 'auto',
+      'textAlign': 'center',
       'width': 350
     };
 
     return (
-      <div style={ContainerStyle} className="clearfix">
-        <div style={{ 'float': 'left', 'textAlign': 'left' }}>
-          <div ref={'_1'} style={HiddenStyle}> <h1 className="highlight-type u-text-center"> Happy </h1> </div>
-          <div ref={'_2'} style={HiddenStyle}> <h3 className="highlight-type"> Valentines </h3> </div>
-        </div>
-
-        <div style={{ 'float': 'right', 'marginLeft': '5px', 'textAlign': 'center' }}>
-          <h1> &#33; </h1>
-        </div>
+      <div style={ContainerStyle}>
+        <div ref={'_5'} style={HiddenStyle}> <i className="ion-heart" /> </div>
+        <div ref={'_1'} style={HiddenStyle}> <h5><span className="special-type">Mahal Ko</span></h5> </div>
+        <div ref={'_2'} style={HiddenStyle}> <h1 className="highlight-type u-text-center"> Happy </h1> </div>
+        <div ref={'_3'} style={HiddenStyle}> <h3 className="highlight-type"> Valentines </h3> </div>
+        <div ref={'_4'} style={HiddenStyle}> <h5><span className="l-type">Jealian Lang Sapat Na</span></h5> </div>
       </div>
     );
   },
@@ -32,9 +30,15 @@ var Last = React.createClass({
   /**
    * {AnimationMixin}
    */
-  $pauseLength: 1000,
-  $elementsLength: 2,
-  $animations: { _1: 'bounceInDown', _2: 'zoomInUp' }
+  $pauseLength: 1500,
+  $elementsLength: 5,
+  $animations: {
+    _1: 'flipInX',
+    _2: 'zoomInUp',
+    _3: 'lightSpeedIn',
+    _4: 'fadeInLeft',
+    _5: 'fadeInDown'
+  }
 });
 
 module.exports = Last;
