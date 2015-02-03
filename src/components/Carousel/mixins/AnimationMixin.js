@@ -18,12 +18,23 @@ var AnimationMixin = {
 
     for ( var i = 1; i <= ; i++ ) {
       if ( i == 1 ) {
-        setTimeout( this._1, this.$pauseLength );
+        setTimeout( this.animate('1'), this.$pauseLength );
       }
 
       else { 
-        one(refs[_i(1)].getDOMNode(), ANIMATIONEND, this.[_i1(i)]);
+        one( refs['_' + (i - 1)].getDOMNode(), ANIMATIONEND, this.animate(i) );
       }
+    }
+  },
+
+  /**
+   *
+   */
+  _animate: function(i) {
+    var ref = '_' + i;
+
+    return function() {
+      animate(this.refs[ref].getDOMNode(), ANIMATIONS[ref] );
     }
   },
 
@@ -31,18 +42,12 @@ var AnimationMixin = {
    * The pause before starting the first animation (ms)
    * @return int ms
    */
-  $pauseLength: function() { return 1500; },
+  $$pauseLength: function() { return 1500; },
 
   /**
    * The number of elements to animate (ms)
    */
-  $elementsLength: function() { },
+  $$elementsLength: function() { }
 };
-
-/**
- * A utility fn that prepends an underscore to the index
- */
-function _i(i) { return '_' + i }
-function _i1(i) { return '_' + (i + 1) }
 
 module.exports = AnimationMixin;
