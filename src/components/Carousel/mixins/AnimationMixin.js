@@ -18,7 +18,7 @@ var AnimationMixin = {
 
     for ( var i = 1; i <= ; i++ ) {
       if ( i == 1 ) {
-        setTimeout( this.animate('1'), this.$pauseLength );
+        setTimeout( this.animate(1), this.$pauseLength );
       }
 
       else { 
