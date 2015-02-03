@@ -70,7 +70,7 @@ var Gallery = React.createClass({
   $pauseLength: 1500,
   $elementsLength: 16,
   $animations: {
-    _1: 'bounceInDown',
+    _1: 'flipInX',
     _2: 'zoomInUp',
     _3: 'bounceIn',
     _4: 'lightSpeedIn',
