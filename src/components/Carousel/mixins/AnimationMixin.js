@@ -42,12 +42,12 @@ var AnimationMixin = {
    * The pause before starting the first animation (ms)
    * @return int ms
    */
-  $$pauseLength: function() { return 1500; },
+  $pauseLength: function() { return 1500; },
 
   /**
    * The number of elements to animate (ms)
    */
-  $$elementsLength: function() { }
+  $elementsLength: function() { }
 };
 
 module.exports = AnimationMixin;
