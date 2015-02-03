@@ -3,10 +3,6 @@ var React = require('react');
 
 var AnimationMixin = require('./mixins/AnimationMixin');
 var Thumbnail = require('../Thumbnail');
-
-/**
- * {animate.css}
- */
 var HiddenStyle = require('./utils/hidden.css');
 
 // Base size of each cell

@@ -6,7 +6,13 @@ var ANIMATIONEND = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimation
  * event listeners, and animation each one.
  *
  * @usage
- * 
+ * Include to a component's mixins
+ *
+ * React.createClass({
+ *   mixins: [AnimationMixin]
+ * })
+ *
+ * Configure with `$pauseLength`, `$elementsLength`, `$animations`
  */
 var AnimationMixin = {
   componentDidMount: function() {

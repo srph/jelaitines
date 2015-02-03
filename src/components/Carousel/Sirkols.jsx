@@ -2,12 +2,8 @@
 var React = require('react');
 var objectAssign = require('object-assign');
 
-var one = require('../../utils/$el').one;
-var animate = require('./utils/animate');
+var AnimationMixin = require('./mixins/AnimationMixin');
 var HiddenStyle = require('./utils/hidden.css');
-
-var ANIMATIONEND_EVT = require('./utils/animationEnd.evt');
-var ANI = { _1: 'bounceIn', _2: 'bounceIn', _3: 'bounceIn' };
 
 // Thumbnail styling
 var ThumbnailStyle = {
@@ -22,19 +18,8 @@ var L2 = propSize('128px');
 var L3 = propSize('64px');
 
 var Sirkols = React.createClass({
-  /**
-   * {animate.css}
-   */
-  componentDidMount: function() {
-    this.forceUpdate(function() {
-      var refs = this.refs;
-
-      setTimeout(this._1, 1500);
-      one(refs._1.getDOMNode(), ANIMATIONEND_EVT, this._2);
-      one(refs._2.getDOMNode(), ANIMATIONEND_EVT, this._3);
-    });
-  },
-
+  mixins: [AnimationMixin],
+  
   render: function () {
     var IMGStyle = {
       '1': objectAssign({}, ThumbnailStyle, L1),
@@ -59,12 +44,9 @@ var Sirkols = React.createClass({
     );
   },
 
-  /**
-   * {animate.css}
-   */
-  _1: function() { animate(this.refs._1.getDOMNode(), ANI._1 ); },
-  _2: function() { animate(this.refs._2.getDOMNode(), ANI._2 ); },
-  _3: function() { animate(this.refs._3.getDOMNode(), ANI._3 ); }
+  $pauseLength: 1500,
+  $elementsLength: 3,
+  $animations: { _1: 'bounceIn', _2: 'bounceIn', _3: 'bounceIn' }
 });
 
 /**
