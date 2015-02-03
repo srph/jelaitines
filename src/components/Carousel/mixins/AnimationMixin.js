@@ -1,11 +1,3 @@
-var ANIMATIONEND = [
-  'webkitAnimationEnd',
-  'mozAnimationEnd',
-  'MSAnimationEnd',
-  'oanimationend',
-  'animationend'
-].join(' ');
-
 /**
  * An animation mixin for this `special` carousel. Since we mark elements with
  * the pattern ```_n```, we can just iterate to create the animation_end
@@ -15,6 +7,7 @@ var AnimationMixin = {
   componentDidMount: function() {
     var pauseLength = this.$pauseLength();
     var elementsLength = this.$elementsLength();
+    var ANIMATIONEND = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
 
     for ( var i = 1; i <= ; i++ ) {
       if ( i == 1 ) {
