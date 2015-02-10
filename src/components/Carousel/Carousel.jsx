@@ -21,12 +21,19 @@ var SLIDES_COUNT = 6;
 // to be mappable (Array.map)
 var SLIDES = [First, Sirkols, Second, Gallery, Loader, Greeting];
 // BGs
+// var SLIDES_BG = [
+//   '(90deg, #4CB8C4 10%, #3CD3AD 90%)',
+//   '(90deg, #DD5E89 10%, #F7BB97 90%)',
+//   '(90deg, #8e9eab 10%, #eef2f3 90%)',
+//   '(90deg, #83a4d4 10%, #b6fbff 90%)',
+//   '(90deg, rgb(199, 79, 188) 70%, rgb(239, 92, 109) 90%)'
+// ];
 var SLIDES_BG = [
-  '(90deg, #4CB8C4 10%, #3CD3AD 90%)',
-  '(90deg, #DD5E89 10%, #F7BB97 90%)',
-  '(90deg, #8e9eab 10%, #eef2f3 90%)',
-  '(90deg, #83a4d4 10%, #b6fbff 90%)',
-  '(90deg, rgb(199, 79, 188) 70%, rgb(239, 92, 109) 90%)'
+  '3CKz5og.png',
+  '9Rfj5VY.png',
+  'MlYJNTB.png',
+  'Ok4X86P.png',
+  'Qm4ZfBf.png'
 ];
 
 // keyCode enum
@@ -87,7 +94,11 @@ var Carousel = React.createClass({
       // 'background': '-moz-linear-gradient' + SLIDES_BG[active],
       // 'background': '-o-linear-gradient' + SLIDES_BG[active],
       // 'background': '-ms-linear-gradient' + SLIDES_BG[active],
-      'background': 'linear-gradient' + SLIDES_BG[active],
+      'backgroundImage': 'url(dist/img/bg/' + SLIDES_BG[active] + ')',
+      // 'backgroundSize': 'cover',
+      'backgroundRepeat': 'no-repeat',
+      // 'backgroundAttachment': 'fixed',
+      'backgroundPositionX': Math.abs(CarouselOffset) + 'px',
 
       // Move slide
       'WebkitTransform': 'translate('+CarouselOffset+'px, 0)',
@@ -97,11 +108,11 @@ var Carousel = React.createClass({
       'transform': 'translate('+CarouselOffset+'px, 0)',
 
       // Slide transitions
-      'WebkitTransition': '1s all cubic-bezier(0.68, -0.55, 0.265, 1.15)',
-      'MozTransition': '1s all cubic-bezier(0.68, -0.55, 0.265, 1.15)',
-      'OTransition': '1s all cubic-bezier(0.68, -0.55, 0.265, 1.15)',
-      'msTransition': '1s all cubic-bezier(0.68, -0.55, 0.265, 1.15)',
-      'transition': '1s all cubic-bezier(0.68, -0.55, 0.265, 1.15)'
+      'WebkitTransition': '1.5s all cubic-bezier(0.68, -0.55, 0.265, 1.15)',
+      'MozTransition': '1.5s all cubic-bezier(0.68, -0.55, 0.265, 1.15)',
+      'OTransition': '1.5s all cubic-bezier(0.68, -0.55, 0.265, 1.15)',
+      'msTransition': '1.5s all cubic-bezier(0.68, -0.55, 0.265, 1.15)',
+      'transition': '1.5s all cubic-bezier(0.68, -0.55, 0.265, 1.15)'
     };
 
     // Each slide
