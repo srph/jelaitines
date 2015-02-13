@@ -1,9 +1,11 @@
 # jelaitines
 :heart: My valentine's gift *teehee*
 
+Oh yeah, no demos because yolo. 
+
 ## Preview
 
-Some mocks ([1](http://fav.me/d8fvbev), [2](http://fav.me/d8fva4o)) @ deviantART.
+Some mocks ([1](http://fav.me/d8fvbev), [2](http://fav.me/d8fva4o)) @ deviantART. Actual look looks shit, so, hahahaha. But the carousel thing was kind of cool.
 
 ## Acknowledgement
 
