@@ -33,7 +33,8 @@ var SLIDES_BG = [
   '9Rfj5VY.png',
   'MlYJNTB.png',
   'Ok4X86P.png',
-  'Qm4ZfBf.png'
+  'Qm4ZfBf.png',
+  '3CKz5og.png'
 ];
 
 // keyCode enum
